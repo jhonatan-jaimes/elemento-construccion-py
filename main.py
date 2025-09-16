@@ -1,6 +1,6 @@
-from api import api
+from src.api import api
 import uvicorn
-from elemento import elemento_routes
+from src.elemento import elemento_routes
 
 app = api.app
 

@@ -3,6 +3,7 @@ from pydantic import BaseModel, Field
 from src.elementos import ElementoEntity
 from src.elemento import elemento_service
 from src.placa import PlacaEntity
+from src.entitys import Areas, Materiales, Medidas
 
 router = APIRouter(prefix="/elemento")
 service = elemento_service
@@ -21,7 +22,8 @@ def save_elemento(elemento: Element):
         ele = ElementoEntity(
             elemento.id,
             elemento.name,
-            elemento.lot
+            elemento.lot,
+            Medidas()
         )
         service.save_elemento(ele)
         return {"message": "guardado"}
