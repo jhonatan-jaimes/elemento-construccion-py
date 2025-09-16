@@ -1,5 +1,5 @@
 from .Elemento import Elemento
-from .Service import Service
-from .Routes import router
+from .Service import service as elemento_service
+from .routes import router as elemento_routes
 
-__all__ = ["Elemento", "Service", "router"]
+__all__ = ["Elemento", "elemento_service", "elemento_routes"]

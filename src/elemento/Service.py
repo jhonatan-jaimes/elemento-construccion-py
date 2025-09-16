@@ -13,3 +13,6 @@ class Service:
 
     def get_elementos(self):
         return self.repo
+
+
+service = Service()

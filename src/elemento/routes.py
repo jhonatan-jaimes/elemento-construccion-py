@@ -1,12 +1,11 @@
 from fastapi import APIRouter
 from pydantic import BaseModel, Field
-
-from . import Service
 from src.elementos import ElementoEntity
+from src.elemento import elemento_service
 from src.placa import PlacaEntity
 
 router = APIRouter(prefix="/elemento")
-service = Service()
+service = elemento_service
 
 
 class Element(BaseModel):
@@ -30,7 +29,7 @@ def save_elemento(elemento: Element):
         ele = PlacaEntity(
             elemento.id,
             elemento.name,
-            elemento.material
+            elemento.lot
         )
         service.save_elemento(ele)
         return {"message": "guardado"}

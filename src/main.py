@@ -1,6 +1,6 @@
 from api import api
 import uvicorn
-from elemento import router as elemento_routes
+from elemento import elemento_routes
 
 app = api.app
 
